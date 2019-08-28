@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>foodcubo</title>
+	 <meta name="viewport" content="width=device-width,
+    initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="home.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+        function myalert(){
+        	alert("Hello open this site in 1440px .Site is undermaintance")
+
+        }
+			
+		$(document).ready(function () {
+			$('img').click(function () {
+				$(".nav-class").toggle();
+			})
+			$(".search-fav").hide();
+			$(".search-res").hide();
+		$(".dish").click(function(){
+			$(".search-fav").hide();
+			$(".search-res").hide();
+			$(".search-dish").show();
+			$(".dish input").css("background" , "blue");
+			$(".res input").css("background" , "white");
+			$(".fav input").css("background" , "white");
+		})
+		$(".res").click(function(){
+			$(".search-fav").hide();
+			$(".search-dish").hide();
+			$(".search-res").show();
+		   $(".res input").css("background" , "blue");
+			$(".dish input").css("background" , "white");
+			$(".fav input").css("background" , "white");
+		})
+		$(".fav").click(function(){
+			$(".search-dish").hide();
+			$(".search-res").hide();
+			$(".search-fav").show();
+			$(".fav input").css("background" , "blue");
+			$(".res input").css("background" , "white");
+			$(".dish input").css("background" , "white");
+		})
+	})
+var slideIndex = 1;
+showSlide(slideIndex=1);
+function plusSlides(n){
+showSlide(slideIndex += n);
+}
+function currentSlide(n) {
+showSlide(slideIndex = n);
+}
+function showSlide(n){
+var i;
+var slides = document.getElementsByClassName("myslides");
+var dots = document.getElementsByClassName("dots");
+if (n > slides.length) { slideIndex = 1};
+if (n < 1) { slideIndex = slides.length};
+for (i=0;i<slides.length;i++) {
+slides[i].style.display = "none";
+
+};
+for (i=0;i<dots.length;i++) {
+dots[i].className = dots[i].className.replace(" active","");
+};
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
+}
+	</script>
+</head>
+<body onload="myalert()">
+   <header>
+		<a href="#"><img src="images/logo.png"></a>
+		<div class="admin">
+		<form method="post" action="serach-index.php">
+			<input type="text" name="" placeholder="Search Food">
+			<input type="submit"  name="" value=" ">
+		</form>
+		
+		<abbr title="Profile"><a href="#"><img src="images/admin.png"></a></abbr>
+		</div>
+	</header>
+<section>
+	<abbr title="wishlist item"><a href="#"><img src="images/wishlist.png"></a></abbr>
+    <abbr title="Cart item"><a href="#"><img src="images/cart.png"></a></abbr>
+	
+<nav>
+	<img src="menu-bar.png">
+	<div class="nav-class">
+	<ul>
+		<li><a href="#" class="active">HOME</a></li>
+		<li><a href="#">SIGNIN</a></li>
+		<li><a href="#">SIGNUP</a></li>
+		<li><a href="#">OFFER</a></li>
+		<li><a href="#">ORDER</a></li>
+		<li><a href="#">CONTACT</a></li>
+        <li><abbr title="wishlist item"><a href="#"><img src="images/wishlist.png"></a></abbr></li>
+         <li><abbr title="Cart item"><a href="#"><img src="images/cart.png"></a></abbr></li>
+		
+	</ul>
+	</div>
+</nav>
+</section>
+<div class="search-container">
+	<h1>Great Resturants In Patna , Deliver TO You.</h1>
+	<h3>Quick <span style="color:white">Search...</span> </h3>
+	
+	<ul>
+        <li><div class="dish"><input type="submit" name="" value="DISHES"></div>
+         	<div class="search-dish">
+         		<input type="text" name="" placeholder="Search Dish">
+         		<input type="submit" name="" value="FIND DISH"></div></li>
+         <li><div class="res"><input type="submit" name="" value="RESTURANTS"></div>
+         <div class="search-res">
+         		<input type="text" name="" placeholder="Search Resturants">
+         		<input type="submit" name="" value="RESTURANTS"></div></li>
+         <li><div class="fav"><input type="submit" name="" value="FAVOURATE"></div>
+         <div class="search-fav">
+         		<input type="text" name="" placeholder="Search Favourates">
+         		<input type="submit" name="" value="FAVOURATE"></div></li>
+	</ul>
+</div>
+<div class="slideshow-container">
+<div class="myslides fade">
+<div class="numbers">1 / 4</div>
+<img src="images/1.png">
+</div>
+<div class="myslides fade">
+<div class="numbers">2 / 4</div>
+<img src="images/2.png">
+</div>
+<div class="myslides fade">
+<div class="numbers">3 / 4</div>
+<img src="images/3.png">
+</div>
+<div class="myslides fade">
+<div class="numbers">4 / 4</div>
+<img src="images/4.png">
+</div>
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+<div style="text-align:center">
+<span class="dots" onclick="currentSlide(1)"></span> 
+<span class="dots" onclick="currentSlide(2)"></span> 
+<span class="dots" onclick="currentSlide(3)"></span> 
+<span class="dots" onclick="currentSlide(4)"></span> 
+</div>
+<div class="sort"><h3>Sort By:-</h3>
+<div class="category"><select required="value">
+<option >FOOD</option>
+<option >North Indian</option>
+<option >South Indian</option>
+<option >Non-Veg</option>
+<option >Chinease</option>
+<option >Panjabi Tarka</option>
+<option >Mughalia</option>
+<option >Nepali</option>
+<option >Veg</option>
+<option >South Indian</option>
+<option >Fast Food</option>
+<option >Desert</option>
+<option >Soup</option>
+<option >Drink</option>
+</select></div>
+<div class="resturant"><select required="value">
+<option >RESTAURANTS</option>
+<option >Restaurant1</option>
+<option >Restaurant2</option>
+<option >Restaurant3</option>
+<option >Restaurant4</option>
+<option >Restaurant5</option>
+<option >Restaurant6</option>
+<option >Restaurant7</option>
+<option >Restaurant8</option>
+<option >Restaurant9</option>
+<option >Restaurant10</option>
+<option >Restaurant11</option>
+<option >Restaurant12</option>
+<option >Restaurant13</option>
+</select></div>
+<div class="loc"><select required="value">
+<option >LOCATION</option>
+<option >Location1</option>
+<option >Location2</option>
+<option >Location3</option>
+<option >Location4</option>
+<option >Location5</option>
+<option >Location6</option>
+<option >Location7</option>
+<option >Location8</option>
+<option >Location9</option>
+<option >Location10</option>
+<option >Location11</option>
+<option >Location12</option>
+<option >Location13</option>
+</select></div></div>
+<div class="item-box">
+	<div class="pf"> Popular Food</div>
+	<hr>
+<div class="small-item-box">
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	<ul>
+		<li><div class="img-box"><img src="images/1.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant one   <span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.0</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">120</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+
+
+		<li><div class="img-box"><img src="images/2.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name2</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant two <span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.0</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">100</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+
+		<li><div class="img-box"><img src="images/3.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name3</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant three<span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.0</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">120</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+
+		<li><div class="img-box"><img src="images/4.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name4</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant four   <span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.0</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">160</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+
+		<li><div class="img-box"><img src="images/5.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name 5</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant five   <span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.2</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">180</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+
+		<li><div class="img-box"><img src="images/6.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant one   <span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.0</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">120</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+	</ul>
+	</div>
+
+<div class="pr">Popular Restaurants</div> 
+	<hr>
+<div class="small-item-2">
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	<ul>
+		<li><div class="img-box"><img src="images/7.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant one   <span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.0</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">120</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+
+
+		<li><div class="img-box"><img src="images/8.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name2</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant two <span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.0</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">100</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+
+		<li><div class="img-box"><img src="images/9.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name3</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant three<span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.0</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">120</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+
+		<li><div class="img-box"><img src="images/10.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name4</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant four   <span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.0</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">160</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+
+		<li><div class="img-box"><img src="images/11.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name 5</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant five   <span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.2</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">180</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+			
+		<li><div class="img-box"><img src="images/12.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant one   <span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.0</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">120</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+	</ul>
+	</div>
+
+<div class="di"> Desert and Icecreames</div>
+	<hr>
+<div class="small-item-3">
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	<ul>
+		<li><div class="img-box"><img src="images/13.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant one   <span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.0</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">120</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+
+
+		<li><div class="img-box"><img src="images/14.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name2</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant two <span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.0</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">100</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+
+		<li><div class="img-box"><img src="images/15.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name3</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant three<span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.0</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">120</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+
+		<li><div class="img-box"><img src="images/4.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name4</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant four   <span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.0</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">160</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+
+		<li><div class="img-box"><img src="images/5.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name 5</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant five   <span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.2</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">180</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+			
+		<li><div class="img-box"><img src="images/1.jpeg"><a href="#"><h4 style="text-align: center; font-family: sans-serif; color: orange">Dish Name</h4></a><a href="#"><h4 style="color: black; font-family: sans-serif; margin-left: 10px">Restaurant one   <span style="background: green; color: white;border-radius: 4px 4px 4px 4px ;float: right;margin-right: 10px;" >4.0</span></h3></a><center><h4><span style="text-decoration: line-through;">2</span> <span style="color: red">120</span></h4><p style="color: rgba(0,0,0,.7);">south Indian ,Fast Food</p>
+			<p><span style="color: orange">closes in -- min</span></p><h5>Delivery time   00:00 Mins</h5></center></div></li>
+	</ul>
+	</div>
+</div>
+<center>
+      <div class="down"><a href="#"><img src="images/ply.jpeg"></a><a href="#"><img src="images/apple.jpg"></a></div></center>
+         <center>
+         	<div class="bottom-nav">
+         	<nav>
+         		<ul><li><a href="#">COMPANY</a>
+         			<ul> <li><a href="#">HOME</a></li>
+         			     <li><a href="#">TEAM</a></li>
+         			     <li><a href="#">CARRIER</a></li>
+         			     <li><a href="#">BLOG</a></li>
+         			     <li><a href="#">OFFER</a></li>
+         			     <li><a href="#">RTAE US</a></li>
+         			     <li><a href="#">CONTACT</a></li></ul></li>
+         			<li><a href="#">LEGAL</a>
+         			<ul>
+		  			<li><a href="#">TERMS</a></li>
+		  			<li><a href="#">REFUND</a></li>
+		  			<li><a href="#">CANCELLATION</a></li>
+		  			<li><a href="#">PRIVACY POLICY</a></li>
+		  			<li><a href="#">COOKIES</a></li>
+		  			<li><a href="#">OFFER TERMS</a></li>
+		  		</ul></li>
+         			<li><a href="#">CONTACT</a>
+         			<ul> 
+		  			<li><a href="#"><abbr title="xyzzzzz  ,000000">ADDRESS</abbr></a></li>
+		  			<li><a href="#"><abbr title="+9100000000">PHONE</abbr></a></li>
+		  			<li><a href="#"><abbr title="foodcubo@gmail.com">EMAIL</abbr></a></li>
+		  			<li><a href="#"><abbr title="foodcubo9001">LINKEDIN</abbr></a></li>
+		  			<li><a href="#"><abbr title="foodcubo9001@gmail.com">HELP AND SUPPORT</abbr></a></li>
+		  			<li><a href="#"><abbr title="foodcubo9001">PARTNER WITH US</abbr></a></li>
+		  		</ul></li>
+         			<li><input type="submit" name="" value="TOP">
+         			<ul>
+         			<li><div class="box">
+         				<h3>Query</h3>
+         				<hr>
+         				<input type="text" name="" placeholder="Question">
+         				<input type="text" name="" placeholder="Email">
+         				<input type="submit" name="" value="Ask">
+         			    </div></li></ul></li></ul><br>
+         			    <center><a href="#">Signin    | </a><a href="#">Signup</a></center><br>
+         			    <p>FOLLOW US ON</p>
+         			 
+         			    <div class="socail-site"> 
+         				<ul>
+         					<li><a href="#"><img src="in.png"></a></li>
+           		            <li><a href="#"><img src="fb.png"></a></li>
+           		            <li><a href="#"><img src="tw.png"></a></li>
+           		            <li><a href="#"><img src="yt.png"></a></li>
+         			    </ul>    
+                        </div><br>	
+
+                        <div class="about-info">
+                        	<center>
+                        	<ul><li><a href="#">About Us </a></li>
+                        		<li><a href="#">Privecy</a></li>
+                        		<li><a href="#">Terms</a></li></ul>
+                        		</center>
+                        </div>
+             <div class="copy-info"> <p> © 2019  Food Cubo Limited . ALL Right Reserved.| Food Tech Foodcubo.</p>
+             </div>
+         	</nav>
+         	</div>
+         </center>
+</body>
+</html>

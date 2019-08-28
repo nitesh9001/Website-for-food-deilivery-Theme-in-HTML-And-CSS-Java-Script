@@ -1,0 +1,3 @@
+<
+..........................    FOODCUBO  ................................
+This home page of foodcubo is supported on screen size 1440px . Beacuse of some problems the page is not purley responsive due to lack of time . 
